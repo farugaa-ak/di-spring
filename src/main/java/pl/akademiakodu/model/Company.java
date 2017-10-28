@@ -1,5 +1,6 @@
 package pl.akademiakodu.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pl.akademiakodu.model.workers.Worker;
 
@@ -8,17 +9,21 @@ public class Company {
 
     Worker lazyWorker;
     Worker hardWorker;
-    Worker smarWorker;
+    Worker smartWorker;
 
-    public Company(Worker lazyWorker, Worker hardWorker, Worker smarWorker) {
+    Manager manager;
+    //OPTIONAL @Autowired
+    public Company(Worker lazyWorker, Worker hardWorker, Worker smartWorker,Manager manager) {
         this.lazyWorker = lazyWorker;
         this.hardWorker = hardWorker;
-        this.smarWorker = smarWorker;
+        this.smartWorker = smartWorker;
+        this.manager = manager;
     }
 
     public void work() {
         lazyWorker.work();
         hardWorker.work();
-        smarWorker.work();
+        smartWorker.work();
+        manager.say();
     }
 }
