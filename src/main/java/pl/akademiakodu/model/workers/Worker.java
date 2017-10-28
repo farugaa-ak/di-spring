@@ -1,4 +1,4 @@
-package pl.akademiakodu.model;
+package pl.akademiakodu.model.workers;
 
 public interface Worker {
 

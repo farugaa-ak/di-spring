@@ -1,4 +1,4 @@
-package pl.akademiakodu.model;
+package pl.akademiakodu.model.workers;
 
 public class SmartWorker implements Worker {
     public void work() {
