@@ -1,4 +1,4 @@
-package pl.akademiakodu;
+package pl.akademiakodu.application;
 
 import pl.akademiakodu.model.Company;
 import pl.akademiakodu.model.OnePersonCompany;

@@ -1,7 +1,9 @@
 package pl.akademiakodu.model.workers;
 
+import org.springframework.stereotype.Component;
 import pl.akademiakodu.model.workers.Worker;
 
+@Component
 public class HardWorker implements Worker {
 
 

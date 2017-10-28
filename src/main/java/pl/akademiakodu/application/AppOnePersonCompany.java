@@ -1,18 +1,26 @@
-package pl.akademiakodu;
+package pl.akademiakodu.application;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import pl.akademiakodu.model.OnePersonCompany;
 import pl.akademiakodu.model.workers.Worker;
 
+@Service
 public class AppOnePersonCompany {
+
+    @Autowired
+    Worker smartWorker;
+
+    @Autowired
+    Worker hardWorker;
+
+    @Autowired
+    Worker lazyWorker;
 
     DependencyInjectionContainer dependencyInjectionContainer = new DependencyInjectionContainer();
 
-    public static void main(String[] args) {
-        AppOnePersonCompany appOnePersonCompany = new AppOnePersonCompany();
-        appOnePersonCompany.start();
-    }
-
-    private void start() {
+    public void start() {
         Worker smartWorker = dependencyInjectionContainer.smartWorker();
         Worker hardWorker = dependencyInjectionContainer.hardWorker();
         Worker lazyWorker = dependencyInjectionContainer.lazyWorker();

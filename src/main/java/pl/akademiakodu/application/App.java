@@ -1,4 +1,4 @@
-package pl.akademiakodu;
+package pl.akademiakodu.application;
 
 import pl.akademiakodu.model.Company;
 import pl.akademiakodu.model.workers.Worker;
@@ -9,12 +9,6 @@ import pl.akademiakodu.model.workers.Worker;
 public class App {
 
     DependencyInjectionContainer dependencyInjectionContainer = new DependencyInjectionContainer();
-
-    public static void main(String[] args) {
-        App app = new App();
-        app.start();
-
-    }
 
     public void start() {
         Worker smartWorker = dependencyInjectionContainer.smartWorker();

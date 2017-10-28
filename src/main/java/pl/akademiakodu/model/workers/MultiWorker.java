@@ -1,11 +1,14 @@
 package pl.akademiakodu.model.workers;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /*
     Decorator + Composite pattern
  */
+@Component
 public class MultiWorker implements Worker {
 
     private List<Worker> workers;
