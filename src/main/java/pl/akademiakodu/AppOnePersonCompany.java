@@ -13,7 +13,11 @@ public class AppOnePersonCompany {
     }
 
     private void start() {
-        Worker worker = dependencyInjectionContainer.hardWorker();
+        Worker smartWorker = dependencyInjectionContainer.smartWorker();
+        Worker hardWorker = dependencyInjectionContainer.hardWorker();
+        Worker lazyWorker = dependencyInjectionContainer.lazyWorker();
+
+        Worker worker = dependencyInjectionContainer.multiWorker(smartWorker,hardWorker, lazyWorker);
         OnePersonCompany onePersonCompany = dependencyInjectionContainer.onePersonCompany(worker);
         onePersonCompany.work();
 

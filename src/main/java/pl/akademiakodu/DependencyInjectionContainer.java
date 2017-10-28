@@ -2,10 +2,7 @@ package pl.akademiakodu;
 
 import pl.akademiakodu.model.Company;
 import pl.akademiakodu.model.OnePersonCompany;
-import pl.akademiakodu.model.workers.HardWorker;
-import pl.akademiakodu.model.workers.LazyWorker;
-import pl.akademiakodu.model.workers.SmartWorker;
-import pl.akademiakodu.model.workers.Worker;
+import pl.akademiakodu.model.workers.*;
 
 public class DependencyInjectionContainer {
 
@@ -19,6 +16,10 @@ public class DependencyInjectionContainer {
 
     public Worker lazyWorker() {
         return new LazyWorker();
+    }
+
+    public MultiWorker multiWorker(Worker... workers) {
+        return new MultiWorker(workers);
     }
 
     public OnePersonCompany onePersonCompany(Worker worker) {
