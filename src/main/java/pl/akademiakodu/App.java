@@ -1,40 +1,28 @@
 package pl.akademiakodu;
 
 import pl.akademiakodu.model.Company;
-import pl.akademiakodu.model.OnePersonCompany;
-import pl.akademiakodu.model.workers.HardWorker;
-import pl.akademiakodu.model.workers.LazyWorker;
-import pl.akademiakodu.model.workers.SmartWorker;
-
-import java.util.ArrayList;
-import java.util.List;
+import pl.akademiakodu.model.workers.Worker;
 
 /**
  * Hello world!
- *
  */
-public class App
-{
+public class App {
 
-    public static void main(String[] args )
-    {
-        LazyWorker lazyWorker = new LazyWorker();
-        HardWorker hardWorker = new HardWorker();
-        SmartWorker smartWorker = new SmartWorker();
+    DependencyInjectionContainer dependencyInjectionContainer = new DependencyInjectionContainer();
 
-        Company company = new Company(lazyWorker, hardWorker, smartWorker);
+    public static void main(String[] args) {
+        App app = new App();
+        app.start();
 
+    }
+
+    public void start() {
+        Worker smartWorker = dependencyInjectionContainer.smartWorker();
+        Worker hardWorker = dependencyInjectionContainer.hardWorker();
+        Worker lazyWorker = dependencyInjectionContainer.lazyWorker();
+        Company company = dependencyInjectionContainer.company(smartWorker, hardWorker, lazyWorker);
 
         company.work();
-
-
-
-
-
-
-
-
-
 
 
     }
