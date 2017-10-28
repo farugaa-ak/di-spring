@@ -1,6 +1,6 @@
 package pl.akademiakodu.model;
 
-public class HardWorker {
+public class HardWorker implements Worker{
 
 
     public void work() {

@@ -3,11 +3,11 @@ package pl.akademiakodu.model;
 public class Company {
 
     Worker lazyWorker;
-    HardWorker hardWorker;
+    Worker hardWorker;
 
-    public Company() {
-        lazyWorker = new LazyWorker();
-        this.hardWorker = new HardWorker();
+    public Company(Worker lazyWorker, Worker hardWorker) {
+        this.lazyWorker = lazyWorker;
+        this.hardWorker = hardWorker;
     }
 
     public void work() {
