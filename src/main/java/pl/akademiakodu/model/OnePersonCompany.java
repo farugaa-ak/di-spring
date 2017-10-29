@@ -1,16 +1,16 @@
 package pl.akademiakodu.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import pl.akademiakodu.model.workers.Worker;
 
-@Component
 public class OnePersonCompany {
 
-    @Autowired
-    private Worker lazyWorker;
+    private Worker multiWorker;
+
+    public OnePersonCompany(Worker multiWorker) {
+        this.multiWorker = multiWorker;
+    }
 
     public void work(){
-        lazyWorker.work();
+        multiWorker.work();
     }
 }

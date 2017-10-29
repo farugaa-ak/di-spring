@@ -8,7 +8,6 @@ import java.util.List;
 /*
     Decorator + Composite pattern
  */
-@Component
 public class MultiWorker implements Worker {
 
     private List<Worker> workers;
